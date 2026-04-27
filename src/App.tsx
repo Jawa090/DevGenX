@@ -21,7 +21,6 @@ import BlogDetails from "./pages/BlogDetails";
 
 // Components
 import Layout from "./components/Layout";
-import AdminBlogUpload from "./components/AdminBlogUpload";
 
 const queryClient = new QueryClient();
 
@@ -42,7 +41,6 @@ const App = () => (
                 <Route path="blog/:blogId" element={<BlogDetails />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
-                <Route path="admin/blog-upload" element={<AdminBlogUpload />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

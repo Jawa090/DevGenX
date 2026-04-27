@@ -29,7 +29,7 @@ const SectionHeader = ({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7 }}
     >
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold mb-4">
         <span className="text-gradient">{title}</span>
       </h2>
       {subtitle && (

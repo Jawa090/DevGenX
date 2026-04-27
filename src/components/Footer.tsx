@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, CircuitBoard } from "lucide-react";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -15,7 +15,7 @@ const Footer = () => {
     { name: "LinkedIn", icon: <Linkedin size={18} />, url: "https://www.linkedin.com/in/-alijawad/" },
     { name: "GitHub", icon: <Github size={18} />, url: "https://github.com/Jawa090" },
     { name: "Twitter", icon: <Twitter size={18} />, url: "https://twitter.com/" },
-    { name: "Email", icon: <Mail size={18} />, url: "mailto:jstudio899@gmail.com" },
+    { name: "Email", icon: <Mail size={18} />, url: "mailto:devgenxai@gmail.com" },
   ];
 
   const footerLinks = [
@@ -30,10 +30,24 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-futuristic text-xl mb-4">
-              <span className="text-gradient">Dev</span>
-              <span className="text-neon-blue">Gen</span>
-              <span className="text-neon-green">X</span>
+            <h3 className="font-sora text-xl mb-4 flex items-center gap-3">
+              <div className="relative flex items-center justify-center scale-90">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute"
+                >
+                  <div className="w-9 h-9 border border-neon-blue/30 rounded-full border-dashed" />
+                </motion.div>
+                <div className="relative bg-black/40 p-1.5 rounded-lg border border-neon-blue/50 backdrop-blur-sm">
+                  <CircuitBoard className="h-5 w-5 text-neon-blue" strokeWidth={2} />
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gradient">Dev</span>
+                <span className="text-neon-blue">Gen</span>
+                <span className="text-white">X</span>
+              </div>
             </h3>
             <p className="text-sm text-white/70 max-w-md">
               Premium MERN stack development, AI solutions, and graphic design services. We bring your ideas to life with modern technologies and creative design.
@@ -57,7 +71,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-1">
-            <h3 className="font-display text-lg mb-4 text-white">Navigation</h3>
+            <h3 className="font-sora text-lg mb-4 text-white">Navigation</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
@@ -73,9 +87,9 @@ const Footer = () => {
           </div>
 
           <div className="col-span-1">
-            <h3 className="font-display text-lg mb-4 text-white">Contact</h3>
+            <h3 className="font-sora text-lg mb-4 text-white">Contact</h3>
             <p className="text-sm text-white/70 mb-2">Lahore, Pakistan</p>
-            <p className="text-sm text-white/70 mb-2">Jstudio899@gmail.com</p>
+            <p className="text-sm text-white/70 mb-2">devgenxai@gmail.com</p>
             <p className="text-sm text-white/70">+92 3434364680</p>
           </div>
         </div>

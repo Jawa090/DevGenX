@@ -76,8 +76,6 @@ type Category = "all" | "react" | "ai" | "nextjs" | "ml" | "css" | "webassembly"
 
 const Videos = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const categories = [
@@ -90,19 +88,7 @@ const Videos = () => {
     { id: "webassembly", label: "WebAssembly" },
   ];
 
-  const handleAdminAccess = () => {
-    if (password === "admin123") {  // In a real app, use a secure authentication method
-      navigate("/admin/video-upload");
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Access Denied",
-        description: "Incorrect password. Please try again.",
-      });
-    }
-    setPassword("");
-    setShowPasswordModal(false);
-  };
+
 
   const filteredVideos = activeCategory === "all"
     ? sampleVideos
@@ -156,48 +142,7 @@ const Videos = () => {
           </motion.div>
         )}
 
-        <div className="mt-12 text-center">
-          <Button
-            variant="outline"
-            className="glass-card border-neon-blue hover:bg-neon-blue/10"
-            onClick={() => setShowPasswordModal(true)}
-          >
-            <Lock className="mr-2 h-4 w-4" /> Admin Access
-          </Button>
-        </div>
 
-        {showPasswordModal && (
-          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-            <motion.div 
-              className="bg-background p-6 rounded-xl max-w-md w-full glass-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="text-xl font-bold mb-4">Admin Access</h3>
-              <p className="text-white/70 mb-4">Enter your password to access the video upload area.</p>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 mb-4 rounded bg-background border border-white/20 text-white"
-                placeholder="Enter password"
-                onKeyDown={(e) => e.key === 'Enter' && handleAdminAccess()}
-              />
-              <div className="flex justify-end gap-3">
-                <Button
-                  variant="outline"
-                  onClick={() => setShowPasswordModal(false)}
-                >
-                  Cancel
-                </Button>
-                <Button onClick={handleAdminAccess}>
-                  Access
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        )}
       </div>
     </div>
   );

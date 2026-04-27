@@ -12,34 +12,104 @@ const Portfolio = () => {
 
   const portfolioItems = [
     {
-      title: "E-Commerce Platform",
+      title: "ContractorHub",
       category: "mern",
       categoryLabel: "MERN Stack",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop",
       description:
-        "A full-featured e-commerce platform with product management, user authentication, and payment processing. Built with MongoDB, Express, React, and Node.js.",
-      liveUrl: "#",
-      githubUrl: "#",
+        "Directory + lead-gen platform for contractors with marketing tools.",
+      liveUrl: "https://contractorhub.com/",
+      githubUrl: "https://github.com/Jawa090",
     },
     {
-      title: "Hospital Management System",
+      title: "EstimatingHub",
       category: "mern",
       categoryLabel: "MERN Stack",
-      image: "https://images.unsplash.com/photo-1516841273335-e39b37888115?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
       description:
-        "A comprehensive hospital management system for appointment scheduling, patient records, and billing. Includes real-time updates and secure authentication.",
-      liveUrl: "#",
-      githubUrl: "#",
+        "Construction estimating portal with streamlined quote workflows.",
+      liveUrl: "http://estimatinghub.com/",
+      githubUrl: "https://github.com/Jawa090",
     },
     {
-      title: "Real Estate Marketplace",
+      title: "Paradise Estimating",
       category: "mern",
       categoryLabel: "MERN Stack",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
       description:
-        "A property listing platform with advanced search features, virtual tours, and agent-client messaging. Uses MongoDB for efficient data storage and retrieval.",
-      liveUrl: "#",
-      githubUrl: "#",
+        "Estimating services site with conversion-focused UI and forms.",
+      liveUrl: "http://paradiseestimating.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "DecExperts",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Specialist services platform with booking and content modules.",
+      liveUrl: "https://decexperts.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "ContractorList",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Curated contractor directory with search and contact flows.",
+      liveUrl: "http://contractorlist.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "3R eMotors",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Automotive brand site with product catalog and inquiries.",
+      liveUrl: "https://3remotors.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "BitWords",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Digital services company website with multi‑service offerings.",
+      liveUrl: "https://bitwords.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "FusionCortex",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Tech solutions site highlighting engineering and AI capabilities.",
+      liveUrl: "https://fusioncortex.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "Skimming AI",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "AI tooling landing with value props and conversion flows.",
+      liveUrl: "https://www.skimming.ai/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "FreeTool AI",
+      category: "mern",
+      categoryLabel: "MERN Stack",
+      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Directory of AI tools with categories and outbound links.",
+      liveUrl: "https://freetoolai.com/",
+      githubUrl: "https://github.com/Jawa090",
     },
     {
       title: "AI Content Generator",

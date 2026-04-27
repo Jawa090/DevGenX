@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { 
+import {
   Menu,
   X,
   Hexagon,
@@ -55,29 +55,30 @@ const Navigation = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <div className="relative">
-              <Hexagon className="h-8 w-8 text-neon-blue animate-pulse-slow" strokeWidth={1.5} />
+            <div className="relative flex items-center justify-center">
               <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute"
               >
-                <CircuitBoard className="h-4 w-4 text-neon-green" strokeWidth={1.5} />
+                <div className="w-10 h-10 border border-neon-blue/30 rounded-full border-dashed" />
               </motion.div>
+              <div className="relative bg-black/40 p-1.5 rounded-lg border border-neon-blue/50 backdrop-blur-sm group-hover:border-neon-blue transition-colors duration-300">
+                <CircuitBoard className="h-5 w-5 text-neon-blue group-hover:scale-110 transition-transform duration-300" strokeWidth={2} />
+              </div>
             </div>
-            <motion.span 
-              className="font-futuristic text-2xl font-bold text-white ml-2 flex items-center"
+            <motion.span
+              className="font-sora text-2xl font-bold text-white ml-2 flex items-center"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               <span className="text-gradient">Dev</span>
               <span className="text-neon-blue animate-pulse-slow">Gen</span>
-              <span className="relative text-neon-green">
+              <span className="relative text-white">
                 X
-                <motion.span 
-                  className="absolute -inset-1 bg-neon-green/20 blur-sm rounded-full"
+                <motion.span
+                  className="absolute -inset-1 bg-neon-blue/20 blur-sm rounded-full"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />

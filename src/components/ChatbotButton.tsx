@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Chatbot from "@/components/Chatbot";
 import { cn } from "@/lib/utils";
@@ -31,8 +31,7 @@ const ChatbotButton = () => {
             <div className="p-3 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-neon-blue/30 to-neon-purple/30">
               <div className="flex items-center gap-2">
                 <div className="relative">
-                  <MessageCircle className="text-neon-blue h-5 w-5" />
-                  <span className="absolute bottom-0 right-0 h-2 w-2 bg-green-500 rounded-full"></span>
+                  <Bot className="text-neon-blue h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-white">devGenX Assistant</h3>
               </div>
@@ -62,7 +61,14 @@ const ChatbotButton = () => {
               onClick={() => setIsOpen(true)}
               className="w-14 h-14 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 shadow-2xl border border-white/20"
             >
-              <MessageCircle className="h-6 w-6 text-white" />
+              <motion.div
+                initial={{ y: 0, rotate: 0 }}
+                animate={{ y: [0, -2, 0], rotate: [-2, 2, -2] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="relative"
+              >
+                <Bot className="h-8 w-8 text-white" />
+              </motion.div>
             </Button>
             <motion.span 
               className="absolute top-0 right-0 h-3 w-3 bg-green-500 rounded-full"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,10 @@ const ContactForm = () => {
     subject: "",
     message: "",
   });
+
+  //    template_yxrr0hc
+  // service_yz3im2i
+  // Q-F9TKHT3xMs18E2g
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
@@ -21,19 +26,32 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        'service_yz3im2i',
+        'template_yxrr0hc',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'DevGenX',
+        },
+        'Q-F9TKHT3xMs18E2g'
+      );
+
       toast.success("Message sent successfully! We'll get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+      // eslint-disable-next-line no-console
+      console.error("EmailJS error:", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (

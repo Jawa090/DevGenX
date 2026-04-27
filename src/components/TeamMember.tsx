@@ -31,15 +31,15 @@ const TeamMember = ({
 
   const getRoleIcon = () => {
     if (role.toLowerCase().includes("python")) {
-      return <Terminal className="absolute bottom-3 right-3 text-neon-blue/20" size={50} />;
+      return <Terminal className="absolute bottom-3 right-3 text-neon-blue/10" size={50} />;
     } else if (role.toLowerCase().includes("data")) {
-      return <Database className="absolute bottom-3 right-3 text-neon-purple/20" size={50} />;
+      return <Database className="absolute bottom-3 right-3 text-white/10" size={50} />;
     } else if (role.toLowerCase().includes("ml") || role.toLowerCase().includes("machine learning")) {
-      return <BrainCircuit className="absolute bottom-3 right-3 text-neon-green/20" size={50} />;
+      return <BrainCircuit className="absolute bottom-3 right-3 text-neon-blue/10" size={50} />;
     } else if (role.toLowerCase().includes("devops")) {
-      return <Server className="absolute bottom-3 right-3 text-neon-orange/20" size={50} />;
+      return <Server className="absolute bottom-3 right-3 text-white/10" size={50} />;
     } else if (role.toLowerCase().includes("developer")) {
-      return <Code className="absolute bottom-3 right-3 text-neon-blue/20" size={50} />;
+      return <Code className="absolute bottom-3 right-3 text-neon-blue/10" size={50} />;
     }
     return null;
   };
@@ -69,15 +69,9 @@ const TeamMember = ({
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
-        <h3 className="text-lg font-display font-bold text-white">{name}</h3>
+        <h3 className="text-lg font-sora font-bold text-white">{name}</h3>
         <p className={cn(
-          "font-medium text-xs mt-1 mb-2",
-          role.toLowerCase().includes("python") ? "text-neon-blue" : 
-          role.toLowerCase().includes("data") ? "text-neon-purple" : 
-          role.toLowerCase().includes("ml") ? "text-neon-green" :
-          role.toLowerCase().includes("devops") ? "text-neon-orange" :
-          role.toLowerCase().includes("developer") ? "text-neon-blue" :
-          "text-neon-blue"
+          "font-medium text-xs mt-1 mb-2 text-neon-blue",
         )}>{role}</p>
       </div>
       <div className="p-4 relative">

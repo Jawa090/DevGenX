@@ -19,8 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['SF Pro Display', 'system-ui', 'sans-serif'],
-				display: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				sora: ['Sora', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+				display: ['Sora', 'sans-serif'],
 				futuristic: ['Orbitron', 'sans-serif'],
 			},
 			colors: {
@@ -30,10 +32,9 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				neon: {
-					blue: '#00FFFF',   // Electric Blue
-					purple: '#A020F0',
-					pink: '#FF10F0',
-					green: '#39FF14',  // Neon Green
+					blue: '#00d2ff',   // Electric Blue
+					cyan: '#00e5ff',
+					navy: '#0a192f',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

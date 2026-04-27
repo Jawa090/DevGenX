@@ -18,16 +18,19 @@ interface QuickQuestion {
   question: string;
 }
 
-// Predefined responses
+// Predefined responses (short, realistic, and action-oriented)
 const botResponses: Record<string, string> = {
-  "pricing": "Our pricing depends on the specific requirements of your project. For MERN stack development, prices typically start at $5,000. For AI solutions, prices start at $8,000. For a detailed quote, contact us directly.",
-  "services": "We offer a wide range of services including MERN Stack Development, AI Solutions, Graphic Design, Python Development, Data Analysis, and Machine Learning. Each service is customized to meet your specific business needs.",
-  "contact": "You can reach us through our contact form, by email at info@devgenx.com, or by phone at +1 (555) 123-4567. We're available Monday to Friday, 9 AM to 6 PM EST.",
-  "timeline": "Project timelines vary based on complexity. Simple websites typically take 2-4 weeks, while complex applications with AI integration may take 2-6 months. We'll provide a detailed timeline during our initial consultation.",
-  "team": "Our team consists of experienced developers, designers, data scientists, and AI specialists. All team members have at least 5 years of experience in their respective fields and are passionate about delivering exceptional digital solutions.",
-  "process": "Our development process includes: 1) Initial consultation to understand your requirements, 2) Project planning and design, 3) Development and implementation, 4) Testing and quality assurance, 5) Deployment, and 6) Ongoing support and maintenance.",
-  "portfolio": "You can view our portfolio on our website. It showcases our best projects across various industries including e-commerce, finance, healthcare, and education. Each case study provides detailed information about the challenges we tackled and the solutions we implemented.",
-  "technologies": "We specialize in modern technologies including React, Node.js, MongoDB, Express, Python, TensorFlow, PyTorch, and various AI and ML frameworks. We also work with design tools like Adobe Creative Suite and Figma."
+  "pricing": "Our pricing depends on scope. Typical starting points: MERN marketing site $2.5k–$5k, full MERN app $6k+, AI chatbot $3k+, data dashboards $2k+. Share goals and deadline, and I'll outline a fixed‑scope quote.",
+  "services": "We ship: MERN apps, AI chatbots/automation, Python backends, data dashboards, and conversion‑focused design. If you describe your use case, I'll map it to a suggested stack.",
+  "contact": "Fastest: the Contact page form. Prefer email? info@devgenx.com. We usually reply within 24h on business days.",
+  "timeline": "Rough guide: landing page 1–2 weeks; MVP web app 3–6 weeks; AI chatbot 1–3 weeks incl. evals; complex integrations 6–10 weeks. We confirm a milestone plan on kickoff.",
+  "team": "You're working with a senior duo: MERN/AI engineering and design. We run weekly demos, code reviews, and keep everything in a shared backlog.",
+  "process": "Discovery → Solution design → Iterative build → QA & hardening → Launch. Weekly demos, performance/security checks, and handover docs are included.",
+  "portfolio": "See Featured Projects on Home and the Portfolio page. Recent: ContractorHub (directory + lead gen), EstimatingHub, 3R eMotors, and more—each with live links.",
+  "technologies": "Frontend: React + Vite/Tailwind. Backend: Node/Express. DB: MongoDB. AI: OpenAI APIs + vector search. Python for data/automation when needed.",
+  "nda": "Yes—happy to sign your NDA or provide ours before discussing details.",
+  "maintenance": "We offer post‑launch care: bug fixes, minor enhancements, uptime monitoring, and monthly check‑ins. Flexible retainer or on‑demand.",
+  "payment": "We support fixed‑scope or milestone billing. 40% kickoff, 40% mid‑project, 20% on delivery is common. Invoices via Stripe/transfer."
 };
 
 // Quick questions
@@ -36,7 +39,9 @@ const quickQuestions: QuickQuestion[] = [
   { id: "q2", question: "How much do your services cost?" },
   { id: "q3", question: "How can I contact you?" },
   { id: "q4", question: "What is your development process?" },
-  { id: "q5", question: "How long does a project take?" }
+  { id: "q5", question: "How long does a project take?" },
+  { id: "q6", question: "Can you sign an NDA?" },
+  { id: "q7", question: "Do you provide maintenance after launch?" }
 ];
 
 const Chatbot = () => {
@@ -50,6 +55,7 @@ const Chatbot = () => {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [visitorName, setVisitorName] = useState<string>("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom when messages change
@@ -73,6 +79,7 @@ const Chatbot = () => {
     setIsTyping(true);
     
     // Simulate typing delay
+    const delay = 700 + Math.floor(Math.random() * 500);
     setTimeout(() => {
       // Process message and get response
       const botResponse = getBotResponse(input);
@@ -98,6 +105,14 @@ const Chatbot = () => {
   const getBotResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
     
+    // Try to capture a name
+    const nameMatch = userInput.match(/(?:i'm|i am|my name is)\s+([a-zA-Z][a-zA-Z\-']{1,30})/i);
+    if (nameMatch && !visitorName) {
+      const name = nameMatch[1];
+      setVisitorName(name);
+      return `Nice to meet you, ${name}! Tell me a bit about your project—goal, deadline, and budget range—and I’ll suggest the best plan.`;
+    }
+
     // Check for keywords in the input
     if (input.includes("pricing") || input.includes("cost") || input.includes("price") || input.includes("how much")) {
       return botResponses.pricing;
@@ -115,8 +130,14 @@ const Chatbot = () => {
       return botResponses.portfolio;
     } else if (input.includes("tech") || input.includes("technologies") || input.includes("stack") || input.includes("tools")) {
       return botResponses.technologies;
+    } else if (input.includes("nda")) {
+      return botResponses.nda;
+    } else if (input.includes("mainten") || input.includes("support") || input.includes("after launch")) {
+      return botResponses.maintenance;
+    } else if (input.includes("payment") || input.includes("invoice") || input.includes("pay") || input.includes("milestone")) {
+      return botResponses.payment;
     } else {
-      return "I'm not sure I understand your question. Could you rephrase it or choose one of the quick questions below?";
+      return "I want to give you a useful answer—could you share your goal, deadline, and any examples you like? I can also estimate cost and timeline if you provide basic scope.";
     }
   };
 

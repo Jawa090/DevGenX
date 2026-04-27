@@ -5,28 +5,14 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ChatbotButton from "./ChatbotButton";
 import { motion, AnimatePresence } from "framer-motion";
-import Loader from "./Loader";
+
 
 const Layout = () => {
-  const [loading, setLoading] = useState(true);
   const location = useLocation();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   // Reset scroll position when changing routes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div className="min-h-screen bg-background flex flex-col">

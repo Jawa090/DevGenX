@@ -14,19 +14,19 @@ const HeroScene = () => {
     <div className="absolute inset-0 z-0 opacity-70">
       <div className="w-full h-full relative overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-black/50 animate-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-navy-900/20 to-black/60 animate-gradient" />
         
         {/* Floating circles */}
         {mounted && (
           <>
             <motion.div
-              className="absolute w-64 h-64 rounded-full bg-cyan-500/20 blur-3xl"
+              className="absolute w-64 h-64 rounded-full bg-neon-blue/20 blur-3xl"
               animate={{
                 x: [0, 30, 0],
                 y: [0, 40, 0],
               }}
               transition={{
-                duration: 12, // Fixed: replaced 'a' with a specific duration value
+                duration: 12,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -34,7 +34,7 @@ const HeroScene = () => {
             />
             
             <motion.div
-              className="absolute w-80 h-80 rounded-full bg-purple-500/20 blur-3xl"
+              className="absolute w-80 h-80 rounded-full bg-neon-blue/10 blur-3xl"
               animate={{
                 x: [0, -40, 0],
                 y: [0, 30, 0],

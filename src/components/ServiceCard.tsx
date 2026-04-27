@@ -21,7 +21,7 @@ const ServiceCard = ({ icon, title, description, index }: ServiceCardProps) => {
   return (
     <motion.div
       className={cn(
-        "glass-card rounded-xl p-6 md:p-8 h-full transition-all duration-500 group",
+        "glass-card rounded-xl p-6 md:p-8 h-full transition-all duration-500 group bg-black/30",
         isHovered && "neon-border"
       )}
       initial={{ opacity: 0, y: 50 }}

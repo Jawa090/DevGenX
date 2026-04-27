@@ -42,22 +42,7 @@ const Blog = () => {
           subtitle="Premium MERN stack development, AI solutions, and graphic design services. We bring your ideas to life with modern technologies and creative design."
         />
         
-        <motion.div 
-          className="mt-6"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Link to="/admin/blog-upload">
-            <Button 
-              variant="outline"
-              className="group bg-black/30 border border-neon-blue/50 hover:bg-neon-blue/20 hover:border-neon-blue transition-all"
-            >
-              <ShieldCheck className="mr-2 h-4 w-4 text-neon-blue group-hover:animate-pulse-slow" />
-              <span className="text-gradient">Admin Access</span>
-            </Button>
-          </Link>
-        </motion.div>
+        {/* Admin access button removed as per user request */}
       </div>
 
       <motion.div
