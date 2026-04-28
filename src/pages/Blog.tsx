@@ -9,28 +9,28 @@ import { Button } from "@/components/ui/button";
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Premium MERN Stack Development",
-      excerpt: "Our expert development team specializes in creating robust, scalable applications using MongoDB, Express, React, and Node.js. We deliver high-performance web solutions tailored to your business needs.",
+      title: "How AI Automation Reduces Operational Costs by 40% for NYC Businesses",
+      excerpt: "Discover how Manhattan and Brooklyn companies are using intelligent automation to eliminate manual work, reduce errors, and cut operational expenses. Real case studies with ROI analysis.",
       date: "2024-05-15",
-      readTime: "5 min read",
+      readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
-      category: "Development",
+      category: "AI Automation",
     },
     {
-      title: "Advanced AI Solutions",
-      excerpt: "Leverage cutting-edge artificial intelligence to transform your business. Our AI specialists create custom solutions for automation, data analysis, and intelligent decision-making systems.",
+      title: "Building Multi-Tenant SaaS Platforms: Architecture Guide for Startups",
+      excerpt: "Complete technical guide to building scalable SaaS applications. Database design, tenant isolation, subscription management, and scaling strategies for handling millions of users.",
       date: "2024-05-10",
-      readTime: "4 min read",
+      readTime: "12 min read",
       image: "https://images.unsplash.com/photo-1677442135017-cccf91b68ecd?q=80&w=2070&auto=format&fit=crop",
-      category: "Technology",
+      category: "SaaS Development",
     },
     {
-      title: "Creative Graphic Design",
-      excerpt: "Our creative team delivers eye-catching visual designs that communicate your brand message effectively. From logos to marketing materials, we bring your vision to life.",
+      title: "Enterprise Software Development Cost in New York: 2024 Pricing Guide",
+      excerpt: "What NYC businesses actually pay for custom software development. Breakdown of costs for AI automation, SaaS platforms, CRM systems, and enterprise applications with real project examples.",
       date: "2024-05-05",
-      readTime: "6 min read",
+      readTime: "10 min read",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1969&auto=format&fit=crop",
-      category: "Design",
+      category: "Business Intelligence",
     }
   ];
 
@@ -38,8 +38,8 @@ const Blog = () => {
     <section className="container mx-auto py-16 px-6 md:px-12">
       <div className="flex flex-col items-center mb-12">
         <SectionHeader
-          title="Our Blog"
-          subtitle="Premium MERN stack development, AI solutions, and graphic design services. We bring your ideas to life with modern technologies and creative design."
+          title="Enterprise Software Insights"
+          subtitle="Expert insights on AI automation, SaaS development, and enterprise software trends for New York businesses."
         />
         
         {/* Admin access button removed as per user request */}

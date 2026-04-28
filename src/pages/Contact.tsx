@@ -5,10 +5,10 @@ import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   return (
-    <section className="container mx-auto py-24 px-6 md:px-12 min-h-screen flex flex-col justify-center">
+    <section className="container mx-auto py-16 px-6 md:px-12">
       <SectionHeader
-        title="Get In Touch"
-        subtitle="Have a project in mind? Let's create something amazing together."
+        title="Let's Talk"
+        subtitle="Got a project? Need a quote? Just want to chat about tech? Drop us a message - we usually respond within 24 hours."
       />
 
       <motion.div

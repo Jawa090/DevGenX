@@ -27,7 +27,9 @@ import {
   Users,
   Wrench,
   CheckCircle2,
-  HelpCircle
+  HelpCircle,
+  Calendar,
+  Calculator
 } from "lucide-react";
 
 const Home = () => {
@@ -42,73 +44,73 @@ const Home = () => {
 
   const services = [
     {
-      icon: <Code size={40} />,
-      title: "MERN Stack Development",
+      icon: <BrainCircuit size={40} />,
+      title: "AI Automation & Integration",
       description:
-        "Full-stack web solutions with MongoDB, Express.js, React, and Node.js. We build scalable, modern applications tailored to your business needs.",
+        "Custom AI solutions including ChatGPT integrations, intelligent document processing, workflow automation, and ML-powered analytics. Reduce operational costs by 40% with intelligent automation.",
+    },
+    {
+      icon: <Code size={40} />,
+      title: "Large-Scale SaaS Platforms",
+      description:
+        "Enterprise SaaS applications built to handle millions of users. Multi-tenant architecture, subscription management, analytics dashboards, and API integrations - everything you need to scale.",
     },
     {
       icon: <Cpu size={40} />,
-      title: "AI Solutions",
+      title: "Custom Enterprise Software",
       description:
-        "Leverage the power of artificial intelligence for your business. From chatbots to data analysis, we implement cutting-edge AI technologies.",
-    },
-    {
-      icon: <PaintBucket size={40} />,
-      title: "Graphic Design",
-      description:
-        "Eye-catching visual designs that communicate your brand message effectively. Logos, marketing materials, UI designs, and more.",
-    },
-    {
-      icon: <Terminal size={40} />,
-      title: "Python Development",
-      description:
-        "Custom Python solutions for backend services, data processing, and automation. We create efficient and maintainable Python applications.",
+        "Tailored business applications including CRM systems, ERP solutions, inventory management, and internal tools. Built with modern tech stacks (React, Node.js, Python) for maximum flexibility.",
     },
     {
       icon: <Database size={40} />,
-      title: "Data Analysis",
+      title: "Data Engineering & Analytics",
       description:
-        "Transform raw data into actionable insights. We provide comprehensive data analysis services to help you make informed business decisions.",
+        "Business intelligence platforms, real-time analytics dashboards, ETL pipelines, and data warehousing. Turn your data into competitive advantage with actionable insights.",
     },
     {
-      icon: <BrainCircuit size={40} />,
-      title: "Machine Learning",
+      icon: <Terminal size={40} />,
+      title: "API Development & Microservices",
       description:
-        "Advanced ML solutions that help your business automate processes and gain valuable insights from your data using state-of-the-art algorithms.",
+        "High-performance RESTful APIs and microservices architecture. Built with Node.js, Python (Django/FastAPI), and GraphQL. Designed for scalability, security, and sub-200ms response times.",
+    },
+    {
+      icon: <PaintBucket size={40} />,
+      title: "UI/UX Design & Branding",
+      description:
+        "Conversion-optimized interfaces backed by user research. Complete design systems, brand identity, and marketing assets that drive engagement and increase conversion rates by 35%+.",
     },
   ];
 
   const differentiators = [
     {
       icon: <ShieldCheck className="text-white" size={28} />,
-      title: "Security‑first Delivery",
-      description: "OWASP-aligned practices, secrets hygiene, role-based access, and dependency scanning in every project."
+      title: "Security First",
+      description: "OWASP compliance, dependency scanning, and proper auth. Your app won't get hacked on our watch."
     },
     {
       icon: <Gauge className="text-neon-blue" size={28} />,
-      title: "Performance SLAs",
-      description: "We target sub‑200ms API latency and Lighthouse 90+ scores with budgets and profiling baked in."
+      title: "Actually Fast",
+      description: "Sub-200ms API responses and 90+ Lighthouse scores. We measure performance, not just promise it."
     },
     {
       icon: <Rocket className="text-neon-blue" size={28} />,
-      title: "AI Accelerators",
-      description: "Reusable prompts, vector search starters, and eval harnesses to ship AI features faster."
+      title: "AI That Works",
+      description: "Custom ChatGPT integrations, vector search, and ML models that actually solve business problems."
     },
     {
       icon: <Puzzle className="text-white" size={28} />,
-      title: "Clean Architecture",
-      description: "Modular, typed code with testing pyramids so features scale without rewrites."
+      title: "Clean Code",
+      description: "TypeScript, proper testing, and documentation. Your next developer won't hate us."
     },
     {
       icon: <Wallet className="text-white" size={28} />,
-      title: "Transparent Pricing",
-      description: "Fixed scopes where possible, weekly demos, and artifact access from day one."
+      title: "No Surprises",
+      description: "Fixed quotes, weekly demos, and transparent pricing. You know exactly what you're paying for."
     },
     {
       icon: <Sparkles className="text-neon-blue" size={28} />,
-      title: "Design That Converts",
-      description: "UX patterns validated on real products—less bounce, more activation and retention."
+      title: "Converts Better",
+      description: "UI/UX based on real user data, not design trends. Higher conversion rates guaranteed."
     }
   ];
 
@@ -242,7 +244,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <span className="inline-block mb-4 text-sm md:text-base px-4 py-2 rounded-full neo-blur border border-white/10 text-neon-blue">
-              MERN Stack Development, AI Solutions, and Graphic Design
+              Trusted by 50+ New York Businesses • Manhattan • Brooklyn • Queens
             </span>
           </motion.div>
           
@@ -252,7 +254,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            Bringing Your <span className="text-gradient">Digital Vision</span> to Life
+            Build Better Apps with <span className="text-gradient">Enterprise SaaS</span> Experts
           </motion.h1>
           
           <motion.p
@@ -261,7 +263,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            Expert MERN Stack Development, Python Solutions, AI Integration, Data Analysis, Machine Learning, and Graphic Design Services
+            React.js & Node.js development for New York startups and enterprises. AI automation, large-scale SaaS platforms, and custom enterprise solutions that drive business growth.
           </motion.p>
           
           <motion.div
@@ -270,14 +272,15 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <Link to="/portfolio">
-              <Button className="bg-gradient-to-r from-neon-blue to-white text-black hover:to-neon-blue hover:text-white rounded-lg px-6 py-6 transition-all duration-300 font-bold">
-                View Our Work
+            <a href="https://calendly.com/devgenx" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:opacity-90 rounded-lg px-8 py-6 transition-all duration-300 font-bold text-base">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Free 30-Min Consultation
               </Button>
-            </Link>
-            <Link to="/contact">
+            </a>
+            <Link to="/portfolio">
               <Button variant="outline" className="rounded-lg border-white/20 text-white px-6 py-6 hover:bg-white/5">
-                Contact Us <ChevronRight className="ml-2 h-4 w-4" />
+                View Our Work <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>
@@ -289,10 +292,10 @@ const Home = () => {
       {/* About Section */}
       <section className="py-20 px-6">
         <div className="container mx-auto">
-          <SectionHeader 
-            title="Who We Are"
-            subtitle="We are a team of experts dedicated to creating exceptional digital experiences through code, data, and design."
-          />
+          <SectionHeader
+          title="Enterprise-Grade Development"
+          subtitle="We build AI-powered automation systems, large-scale SaaS platforms, and custom enterprise software that drives business transformation."
+        />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -302,19 +305,19 @@ const Home = () => {
               transition={{ duration: 0.7 }}
             >
               <h3 className="text-2xl md:text-3xl font-sora font-bold mb-4">
-                <span className="text-neon-blue">Tech Expertise</span>
+                <span className="text-neon-blue">AI Automation & SaaS Expertise</span>
               </h3>
               <p className="text-white/70 mb-6">
-                Our team consists of skilled developers specialized in MERN stack, Python, Machine Learning, and DevOps. We bring technical precision and innovation to every project, ensuring robust and scalable solutions.
+                We specialize in building intelligent automation systems and large-scale SaaS platforms. From AI-powered document processing to multi-tenant enterprise applications - we deliver solutions that scale to millions of users while reducing operational costs.
               </p>
               <div className="flex gap-4">
                 <div className="glass-card p-3 rounded-lg">
                   <MonitorSmartphone className="text-neon-blue h-6 w-6 mb-2" />
-                  <p className="text-sm text-white">Full-Stack Development</p>
+                  <p className="text-sm text-white">99.9% Uptime SLA</p>
                 </div>
                 <div className="glass-card p-3 rounded-lg">
                   <BrainCircuit className="text-white h-6 w-6 mb-2" />
-                  <p className="text-sm text-white">AI & ML Integration</p>
+                  <p className="text-sm text-white">AI/ML Integration</p>
                 </div>
               </div>
             </motion.div>
@@ -326,19 +329,19 @@ const Home = () => {
               transition={{ duration: 0.7 }}
             >
               <h3 className="text-2xl md:text-3xl font-sora font-bold mb-4">
-                <span className="text-white">Creative & Data Insights</span>
+                <span className="text-white">Enterprise-Grade Solutions</span>
               </h3>
               <p className="text-white/70 mb-6">
-                Our design and data teams transform concepts into visually appealing designs and actionable insights that captivate audiences, strengthen brand identities, and drive data-informed decisions.
+                From custom CRM systems to real-time analytics platforms - we build enterprise software that handles complex business logic, processes millions of transactions, and integrates seamlessly with your existing infrastructure.
               </p>
               <div className="flex gap-4">
                 <div className="glass-card p-3 rounded-lg">
                   <PaintBucket className="text-neon-blue h-6 w-6 mb-2" />
-                  <p className="text-sm text-white">Visual Design</p>
+                  <p className="text-sm text-white">User-Centric Design</p>
                 </div>
                 <div className="glass-card p-3 rounded-lg">
                   <Database className="text-white h-6 w-6 mb-2" />
-                  <p className="text-sm text-white">Data Analysis</p>
+                  <p className="text-sm text-white">Data Architecture</p>
                 </div>
               </div>
             </motion.div>
@@ -347,7 +350,7 @@ const Home = () => {
           <div className="mt-16 text-center">
             <Link to="/about">
               <Button variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/5">
-                Learn More About Us <ChevronRight className="ml-2 h-4 w-4" />
+                Learn More About Our Team <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -359,7 +362,7 @@ const Home = () => {
         <div className="container mx-auto">
           <SectionHeader 
             title="Our Services"
-            subtitle="We offer a comprehensive range of digital services to help your business thrive in the digital landscape."
+            subtitle="Comprehensive development solutions for startups and enterprises - from MVP to production-scale applications."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -381,6 +384,37 @@ const Home = () => {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Cost Calculator CTA */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="glass-card rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto border border-neon-blue/30"
+          >
+            <div className="w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-6">
+              <Calculator className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How Much Will Your Project Cost?
+            </h2>
+            <p className="text-white/70 text-lg mb-8">
+              Get an instant estimate in less than 2 minutes. No commitment required.
+            </p>
+            <Link to="/calculator">
+              <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:opacity-90 px-8 py-6 text-lg">
+                Calculate Project Cost →
+              </Button>
+            </Link>
+            <p className="text-white/50 text-sm mt-4">
+              ✓ Instant results  ✓ No credit card  ✓ Free consultation included
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -445,8 +479,8 @@ const Home = () => {
       <section className="py-20 px-6 bg-black/20">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Our Process"
-            subtitle="A clear, reliable path from idea to impact—measured and transparent."
+            title="How We Actually Work"
+            subtitle="Our proven process that gets NYC businesses from idea to launch without the usual agency BS."
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-5 gap-6">
             {processSteps.map((step, index) => (
@@ -475,8 +509,8 @@ const Home = () => {
       <section className="py-20 px-6">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Case Studies"
-            subtitle="Real problems, practical solutions, measurable results."
+            title="Real Results, Real Clients"
+            subtitle="Actual projects we've built for NYC businesses. No fake testimonials, no stock photos."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {[{
@@ -593,8 +627,8 @@ const Home = () => {
       <section className="py-20 px-6 bg-black/20">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Client Results"
-            subtitle="Outcomes we delivered—performance, clarity, and tangible business impact."
+            title="What Clients Actually Say"
+            subtitle="Real feedback from real people. No made-up quotes or stock photo testimonials."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -671,10 +705,10 @@ const Home = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Ready to bring your <span className="text-gradient">ideas to life</span>?
+              Ready to build something <span className="text-gradient">that actually works</span>?
             </h2>
             <p className="text-white/70 text-lg mb-10">
-              Let's collaborate to create something amazing together. We're excited to hear about your project!
+              Let's skip the sales pitch and talk about your project. 30-minute call, no commitment required.
             </p>
             <Link to="/contact">
               <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg px-8 py-6 hover:opacity-90 transition-all">

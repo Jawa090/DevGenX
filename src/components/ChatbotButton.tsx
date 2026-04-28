@@ -70,17 +70,6 @@ const ChatbotButton = () => {
                 <Bot className="h-8 w-8 text-white" />
               </motion.div>
             </Button>
-            <motion.span 
-              className="absolute top-0 right-0 h-3 w-3 bg-green-500 rounded-full"
-              animate={{ 
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
           </motion.div>
         )}
       </AnimatePresence>

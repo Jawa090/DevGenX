@@ -18,6 +18,7 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
+import CostCalculator from "./pages/CostCalculator";
 
 // Components
 import Layout from "./components/Layout";
@@ -41,6 +42,7 @@ const App = () => (
                 <Route path="blog/:blogId" element={<BlogDetails />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="calculator" element={<CostCalculator />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

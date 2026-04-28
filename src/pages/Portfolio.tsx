@@ -72,13 +72,33 @@ const Portfolio = () => {
       githubUrl: "https://github.com/Jawa090",
     },
     {
-      title: "BitWords",
+      title: "BitWords Inc Platform",
       category: "mern",
       categoryLabel: "MERN Stack",
       image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
       description:
-        "Digital services company website with multi‑service offerings.",
+        "Scalable web application platform built with React & Node.js. Achieved 40% performance improvement through optimization and modern architecture patterns.",
       liveUrl: "https://bitwords.com/",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "Ekhata ERP System",
+      category: "ai",
+      categoryLabel: "AI Solution",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Enterprise Resource Planning system with AI integration. Features AI skimming tools, LLM models integration, and comprehensive backend development for business automation.",
+      liveUrl: "#",
+      githubUrl: "https://github.com/Jawa090",
+    },
+    {
+      title: "Connect Solutions ML Platform",
+      category: "ai",
+      categoryLabel: "AI Solution", 
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Machine learning platform for data analysis and automation. Successfully deployed 3 ML models for predictive analytics and process optimization during internship period.",
+      liveUrl: "#",
       githubUrl: "https://github.com/Jawa090",
     },
     {
@@ -243,11 +263,11 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-6">
+    <div className="pt-20 pb-20 px-6">
       <div className="container mx-auto">
         <SectionHeader 
-          title="Our Portfolio"
-          subtitle="Explore our projects showcasing our expertise in MERN development, AI solutions, Python development, data analysis, and graphic design."
+          title="Stuff We've Built"
+          subtitle="Real projects for real clients. Click any card to see details, live demos, and what we actually delivered."
         />
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">

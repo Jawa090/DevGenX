@@ -4,6 +4,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ChatbotButton from "./ChatbotButton";
+import BackToTop from "./BackToTop";
+import Breadcrumb from "./Breadcrumb";
+import ExitIntentPopup from "./ExitIntentPopup";
+import StickyCTA from "./StickyCTA";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -17,6 +21,7 @@ const Layout = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
+      <Breadcrumb />
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           <motion.div
@@ -32,6 +37,9 @@ const Layout = () => {
       </main>
       <Footer />
       <ChatbotButton />
+      <BackToTop />
+      <StickyCTA />
+      <ExitIntentPopup />
     </div>
   );
 };

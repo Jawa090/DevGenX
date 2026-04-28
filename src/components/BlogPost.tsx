@@ -15,8 +15,14 @@ interface BlogPostProps {
 }
 
 const BlogPost = ({ title, excerpt, date, readTime, image, category, index }: BlogPostProps) => {
-  // Create slug from title for URL
-  const slug = title.toLowerCase().replace(/\s+/g, '-');
+  // Create slug from title for URL - match the IDs in BlogDetails
+  const slugMap: { [key: string]: string } = {
+    "How AI Automation Reduces Operational Costs by 40% for NYC Businesses": "ai-automation-reduces-costs",
+    "Building Multi-Tenant SaaS Platforms: Architecture Guide for Startups": "multi-tenant-saas-architecture",
+    "Enterprise Software Development Cost in New York: 2024 Pricing Guide": "enterprise-software-cost-nyc"
+  };
+  
+  const slug = slugMap[title] || title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   
   return (
     <motion.div

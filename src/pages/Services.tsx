@@ -59,110 +59,110 @@ const ServiceItem = ({ icon, title, description, index }: ServiceItemProps) => {
 const mernServices = [
   {
     icon: <Code size={24} />,
-    title: "Custom Web Application Development",
-    description: "Tailored web applications built with the MERN stack (MongoDB, Express.js, React, Node.js) to meet your specific business requirements.",
+    title: "Custom Web Apps",
+    description: "Full-stack applications built with React, Node.js, and MongoDB. Fast, secure, and built to scale with your business.",
   },
   {
     icon: <Database size={24} />,
-    title: "Database Design & Management",
-    description: "Efficient database architecture and management using MongoDB, ensuring optimal performance and scalability for your applications.",
+    title: "Database Architecture",
+    description: "MongoDB setups that actually perform well. Proper indexing, query optimization, and data modeling that makes sense.",
   },
   {
     icon: <Cloud size={24} />,
-    title: "Cloud Deployment & DevOps",
-    description: "Seamless deployment of your applications to cloud platforms with CI/CD pipelines for continuous integration and delivery.",
+    title: "Cloud Deployment",
+    description: "AWS, Vercel, or DigitalOcean deployments with CI/CD pipelines. Your app goes live without the headaches.",
   },
   {
     icon: <Smartphone size={24} />,
-    title: "Responsive & Mobile-First Design",
-    description: "Creating responsive web applications that provide optimal user experience across all devices and screen sizes.",
+    title: "Mobile-First Design",
+    description: "Responsive designs that work perfectly on phones, tablets, and desktops. No more pinch-to-zoom nonsense.",
   },
   {
     icon: <Shield size={24} />,
-    title: "Security Implementation",
-    description: "Robust security measures including authentication, authorization, data encryption, and protection against common web vulnerabilities.",
+    title: "Security That Works",
+    description: "JWT authentication, input validation, and OWASP compliance. Your app won't get hacked on our watch.",
   },
   {
     icon: <BarChart3 size={24} />,
-    title: "API Development & Integration",
-    description: "Building custom RESTful APIs and integrating third-party services to extend your application's functionality.",
+    title: "API Development",
+    description: "RESTful APIs that respond fast and handle errors gracefully. Plus integrations with payment, email, and other services.",
   },
 ];
 
 const aiServices = [
   {
     icon: <Cpu size={24} />,
-    title: "Machine Learning Integration",
-    description: "Implementing machine learning algorithms to enable predictive capabilities and data-driven decision making in your applications.",
+    title: "Custom AI Integrations",
+    description: "ChatGPT API integrations, document analysis, and custom ML models. Built for your specific use case, not generic solutions.",
   },
   {
     icon: <BrainCircuit size={24} />,
-    title: "Natural Language Processing",
-    description: "Leveraging NLP technologies to enable your applications to understand, interpret, and generate human language.",
+    title: "Document Processing",
+    description: "Extract data from PDFs, invoices, and forms automatically. OCR and AI-powered text analysis that actually works.",
   },
   {
     icon: <Bot size={24} />,
-    title: "Chatbots & Virtual Assistants",
-    description: "Creating intelligent conversational interfaces that can assist users, answer questions, and automate customer support.",
+    title: "Smart Chatbots",
+    description: "Customer support bots that understand context and give helpful answers. Trained on your data, not generic responses.",
   },
   {
     icon: <MessageSquareText size={24} />,
-    title: "Sentiment Analysis",
-    description: "Analyzing text data to determine emotional tone and customer sentiment for better business insights.",
+    title: "Content Analysis",
+    description: "Analyze customer feedback, reviews, and social media mentions. Get insights that help you make better business decisions.",
   },
   {
     icon: <FileText size={24} />,
-    title: "Document Processing & OCR",
-    description: "Automated document processing, text extraction, and classification using optical character recognition and AI algorithms.",
+    title: "Workflow Automation",
+    description: "Automate repetitive tasks like data entry, email responses, and report generation. Save 20+ hours per week.",
   },
   {
     icon: <LineChart size={24} />,
     title: "Predictive Analytics",
-    description: "Utilizing historical data to forecast trends, behaviors, and outcomes for informed business planning.",
+    description: "Forecast sales, predict customer churn, and identify trends. Data-driven insights that actually impact your bottom line.",
   },
 ];
 
 const designServices = [
   {
     icon: <PaintBucket size={24} />,
-    title: "Brand Identity Design",
-    description: "Creating comprehensive brand identities including logos, color palettes, typography, and brand guidelines.",
+    title: "Brand Identity",
+    description: "Logos and brand guidelines that don't look like every other startup. Memorable designs that work across all platforms.",
   },
   {
     icon: <Palette size={24} />,
     title: "UI/UX Design",
-    description: "Intuitive user interface and experience design that enhances usability and creates memorable interactions.",
+    description: "Interfaces that users actually understand. No confusing navigation, no hidden buttons - just clean, intuitive design.",
   },
   {
     icon: <Layers size={24} />,
-    title: "Print & Packaging Design",
-    description: "Eye-catching print materials and packaging designs that effectively communicate your brand message.",
+    title: "Landing Pages",
+    description: "High-converting landing pages optimized for signups and sales. A/B tested designs that actually move the needle.",
   },
   {
     icon: <Image size={24} />,
-    title: "Social Media Graphics",
-    description: "Engaging social media assets optimized for different platforms to boost your online presence.",
+    title: "Social Media Assets",
+    description: "Eye-catching graphics for Instagram, LinkedIn, and Twitter. Sized correctly and optimized for each platform.",
   },
   {
     icon: <Film size={24} />,
     title: "Motion Graphics",
-    description: "Dynamic motion graphics and animations that bring your brand to life and capture audience attention.",
+    description: "Animated logos, explainer videos, and product demos. Professional animations that don't look cheesy.",
   },
   {
     icon: <Layout size={24} />,
-    title: "Marketing Collateral",
-    description: "Professional marketing materials including brochures, flyers, banners, and presentations to support your sales efforts.",
+    title: "Marketing Materials",
+    description: "Pitch decks, brochures, and sales materials that close deals. Professional designs that make you look legit.",
   },
 ];
 
 const Services = () => {
 
   return (
-    <div className="pt-32 pb-20 px-6">
+    <div className="pt-20 pb-20 px-6">
       <div className="container mx-auto">
         <SectionHeader 
-          title="Our Services"
-          subtitle="We offer a comprehensive range of services to help your business thrive in the digital landscape."
+          title="What We Actually Build"
+          subtitle="Real services for real problems. No corporate buzzwords, just stuff that works."
         />
 
         <div className="space-y-24">
@@ -176,12 +176,11 @@ const Services = () => {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                <span className="text-neon-blue">MERN Stack Development</span>
+                <span className="text-neon-blue">MERN Stack Apps That Don't Suck</span>
               </h2>
               <p className="text-white/70 max-w-4xl">
-                Our MERN stack development services focus on creating robust, scalable web applications 
-                using MongoDB, Express.js, React, and Node.js. We deliver high-performance solutions
-                that meet modern business requirements.
+                React.js frontends that load fast, Node.js APIs that respond in under 200ms, and MongoDB databases that scale. 
+                We build web apps that your users will actually enjoy using.
               </p>
             </motion.div>
 
@@ -208,12 +207,11 @@ const Services = () => {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                <span className="text-neon-purple">AI Solutions</span>
+                <span className="text-neon-purple">AI Solutions That Actually Work</span>
               </h2>
               <p className="text-white/70 max-w-4xl">
-                We harness the power of artificial intelligence to create intelligent applications 
-                that can learn, adapt, and provide valuable insights. Our AI solutions are designed 
-                to automate processes, enhance decision-making, and improve user experiences.
+                Custom ChatGPT integrations, document processing, and automation tools that save you time and money. 
+                No AI hype, just practical solutions that solve real business problems.
               </p>
             </motion.div>
 
@@ -240,12 +238,11 @@ const Services = () => {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                <span className="text-gradient">Graphic Design</span>
+                <span className="text-gradient">Design That Converts</span>
               </h2>
               <p className="text-white/70 max-w-4xl">
-                Our graphic design services transform ideas into visually compelling assets 
-                that communicate your brand message effectively. We combine creativity with 
-                strategic thinking to create designs that resonate with your target audience.
+                UI/UX designs based on real user behavior, not design trends. Logos and branding that people actually remember. 
+                We focus on what makes users click, not what wins design awards.
               </p>
             </motion.div>
 
@@ -266,8 +263,8 @@ const Services = () => {
         {/* Process Section */}
         <section className="mt-24">
           <SectionHeader 
-            title="Our Process"
-            subtitle="We follow a structured process to ensure every project is delivered with the highest quality and efficiency."
+            title="How We Work"
+            subtitle="Our straightforward process - no corporate BS, just clear steps from idea to launch."
           />
 
           <div className="relative">
@@ -284,17 +281,17 @@ const Services = () => {
               >
                 <div className="md:text-right md:pr-12 relative">
                   <div className="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-blue z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">1. Discovery & Planning</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">1. Discovery Call (30 mins)</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    We start by understanding your business goals, target audience, and project requirements to create a solid foundation for your project.
+                    Quick call to understand your business, goals, and budget. No sales pitch - just real talk about what you need and if we're a good fit.
                   </p>
                 </div>
                 <div className="glass-card rounded-xl p-6 md:ml-12">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Requirement gathering and analysis</li>
-                    <li>Market and competitor research</li>
-                    <li>Project scope definition</li>
-                    <li>Timeline and milestone planning</li>
+                    <li>What problem are you solving?</li>
+                    <li>Who are your users?</li>
+                    <li>What's your timeline and budget?</li>
+                    <li>Any technical constraints?</li>
                   </ul>
                 </div>
               </motion.div>
@@ -309,17 +306,17 @@ const Services = () => {
               >
                 <div className="glass-card rounded-xl p-6 md:mr-12 md:order-1">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Wireframing and prototyping</li>
-                    <li>UI/UX design development</li>
-                    <li>Architecture planning</li>
-                    <li>Technology stack finalization</li>
+                    <li>Wireframes showing exact layout</li>
+                    <li>Database schema and API endpoints</li>
+                    <li>Tech stack breakdown</li>
+                    <li>Fixed price quote (no surprises)</li>
                   </ul>
                 </div>
                 <div className="md:pl-12 relative md:order-2">
                   <div className="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-purple z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">2. Design & Strategy</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">2. Technical Spec (2-3 days)</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    We create comprehensive designs and technical strategies that align with your business objectives and user expectations.
+                    Detailed plan showing exactly what we're building. You see wireframes, database design, and API docs before we write any code.
                   </p>
                 </div>
               </motion.div>
@@ -334,17 +331,17 @@ const Services = () => {
               >
                 <div className="md:text-right md:pr-12 relative">
                   <div className="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-blue z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">3. Development & Implementation</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">3. Weekly Builds (6-12 weeks)</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    Our development team brings designs to life, creating robust, scalable, and maintainable code with regular progress updates.
+                    Live demos every Friday. You see real progress, give feedback, and we adjust. No waiting months to see if we're on track.
                   </p>
                 </div>
                 <div className="glass-card rounded-xl p-6 md:ml-12">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Frontend and backend development</li>
-                    <li>Database implementation</li>
-                    <li>API integration</li>
-                    <li>Regular code reviews and testing</li>
+                    <li>Working features every week</li>
+                    <li>Live demo sessions on Fridays</li>
+                    <li>Slack/email for quick questions</li>
+                    <li>Course corrections as needed</li>
                   </ul>
                 </div>
               </motion.div>
@@ -359,17 +356,17 @@ const Services = () => {
               >
                 <div className="glass-card rounded-xl p-6 md:mr-12 md:order-1">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Functionality testing</li>
-                    <li>Performance optimization</li>
-                    <li>Security testing</li>
-                    <li>User acceptance testing</li>
+                    <li>Performance testing (sub-200ms APIs)</li>
+                    <li>Security audits (OWASP compliance)</li>
+                    <li>Cross-browser testing</li>
+                    <li>Bug fixes and polish</li>
                   </ul>
                 </div>
                 <div className="md:pl-12 relative md:order-2">
                   <div className="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-purple z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">4. Testing & Quality Assurance</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">4. Testing & Polish (1-2 weeks)</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    We rigorously test all aspects of your project to ensure functionality, performance, and security meet the highest standards.
+                    We test everything - performance, security, edge cases. No broken features, no slow pages. It works before it ships.
                   </p>
                 </div>
               </motion.div>
@@ -384,17 +381,17 @@ const Services = () => {
               >
                 <div className="md:text-right md:pr-12 relative">
                   <div className="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-blue z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">5. Deployment & Launch</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">5. Launch Day</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    We handle the deployment process to ensure a smooth and successful launch of your project with minimal downtime.
+                    We handle deployment, DNS setup, and monitoring. Your app goes live smoothly, and we're watching to make sure it stays that way.
                   </p>
                 </div>
                 <div className="glass-card rounded-xl p-6 md:ml-12">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Deployment planning</li>
-                    <li>Environment setup</li>
-                    <li>Data migration (if required)</li>
-                    <li>Launch coordination</li>
+                    <li>Production deployment</li>
+                    <li>SSL certificates and DNS</li>
+                    <li>Performance monitoring setup</li>
+                    <li>Launch checklist completion</li>
                   </ul>
                 </div>
               </motion.div>
@@ -409,17 +406,17 @@ const Services = () => {
               >
                 <div className="glass-card rounded-xl p-6 md:mr-12 md:order-1">
                   <ul className="list-disc list-inside text-white/70 space-y-2">
-                    <li>Ongoing maintenance</li>
+                    <li>30 days free support included</li>
+                    <li>Bug fixes and tweaks</li>
                     <li>Performance monitoring</li>
-                    <li>Feature enhancements</li>
-                    <li>Technical support</li>
+                    <li>Optional monthly retainer available</li>
                   </ul>
                 </div>
                 <div className="md:pl-12 relative md:order-2">
                   <div className="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neon-purple z-10 border-4 border-background"></div>
-                  <h3 className="text-xl font-display font-bold mb-2 text-white">6. Maintenance & Support</h3>
+                  <h3 className="text-xl font-display font-bold mb-2 text-white">6. Post-Launch Support</h3>
                   <p className="text-white/70 mb-6 md:mb-0">
-                    We provide ongoing support and maintenance services to ensure your project continues to perform optimally and evolve with your business.
+                    30 days of free support after launch. After that, you own everything - code, servers, domains. Optional ongoing support available.
                   </p>
                 </div>
               </motion.div>

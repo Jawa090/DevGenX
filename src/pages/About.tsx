@@ -7,8 +7,8 @@ const About = () => {
   const teamMembers = [
     {
       name: "Jawad Abbas",
-      role: "MERN Stack Developer & AI Enthusiast",
-      bio: "Jawad is a passionate MERN stack developer with expertise in building scalable web applications and integrating AI solutions. With years of experience in the tech industry, he brings technical excellence and innovation to every project.",
+      role: "Founder & Lead Developer",
+      bio: "Enterprise SaaS architect specializing in high-performance MERN stack applications. 8+ years building scalable web platforms for startups and Fortune 500 companies. Expert in React.js, Node.js, MongoDB, and cloud infrastructure. Delivered 50+ production applications serving millions of users.",
       image: "./173764082.jpeg",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/-alijawad/",
@@ -22,8 +22,8 @@ const About = () => {
   return (
     <section className="container mx-auto py-16 px-6 md:px-12">
       <SectionHeader
-        title="Our Team"
-        subtitle="Meet the talented individuals behind our exceptional digital solutions"
+        title="About DevGenX"
+        subtitle="The story behind the code - how we went from bedroom coding to building apps for NYC businesses"
       />
 
       <motion.div
@@ -49,19 +49,19 @@ const About = () => {
         transition={{ duration: 0.7 }}
       >
         <SectionHeader
-          title="Our Mission"
-          subtitle="To transform ideas into exceptional digital experiences through innovative development, creative design, and data-driven insights."
+          title="Our Story"
+          subtitle="Building enterprise-grade AI automation and SaaS platforms that transform how businesses operate"
         />
 
         <div className="mt-8 max-w-3xl mx-auto glass-card p-8 rounded-xl">
           <p className="text-white/70 mb-4">
-            At DevGenX, we believe in the power of combining technical expertise with creative design and data analytics to create digital solutions that not only look stunning but also perform exceptionally well and deliver measurable results.
+            DevGenX specializes in enterprise AI automation, large-scale SaaS platforms, and custom software development. We help businesses leverage artificial intelligence to automate workflows, reduce operational costs, and scale efficiently.
           </p>
           <p className="text-white/70 mb-4">
-            Our approach is collaborative and client-focused, ensuring that we understand your unique needs and deliver solutions that exceed your expectations. We're committed to staying at the forefront of technology and design trends to bring you the most innovative solutions.
+            Our expertise spans intelligent document processing, predictive analytics, multi-tenant SaaS architectures, and enterprise integrations. We've built systems processing millions of transactions daily, handling terabytes of data, and serving users across global markets.
           </p>
           <p className="text-white/70">
-            Whether you need a complex web application, an AI integration, stunning graphic design, Python-based solutions, or data analytics services, we have the skills and passion to bring your vision to life.
+            Whether you need AI-powered automation to eliminate manual work, a scalable SaaS platform to reach millions of users, or custom enterprise software to streamline operations - we deliver production-ready solutions built with React, Node.js, Python, and modern cloud infrastructure.
           </p>
         </div>
       </motion.div>
