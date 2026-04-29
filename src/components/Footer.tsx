@@ -20,10 +20,10 @@ const Footer = () => {
 
   const footerLinks = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Services", path: "/services/" },
+    { name: "Portfolio", path: "/portfolio/" },
+    { name: "About", path: "/about/" },
+    { name: "Contact", path: "/contact/" },
   ];
   return (
     <footer className="neo-blur border-t border-white/10 py-12 mt-12">
@@ -50,7 +50,7 @@ const Footer = () => {
               </div>
             </h3>
             <p className="text-sm text-white/70 max-w-md">
-              Premium MERN stack development, AI solutions, and graphic design services. We bring your ideas to life with modern technologies and creative design.
+              New York's trusted AI automation and enterprise software development agency. Custom SaaS platforms, CRM systems, data analytics, and UI/UX design for Manhattan, Brooklyn, and Queens businesses.
             </p>
             <div className="flex space-x-4 mt-6">
               {socialLinks.map((link) => (
@@ -88,7 +88,8 @@ const Footer = () => {
 
           <div className="col-span-1">
             <h3 className="font-sora text-lg mb-4 text-white">Contact</h3>
-            <p className="text-sm text-white/70 mb-2">Lahore, Pakistan</p>
+            <p className="text-sm text-white/70 mb-2">Serving New York City</p>
+            <p className="text-sm text-white/70 mb-2">Manhattan | Brooklyn | Queens</p>
             <p className="text-sm text-white/70 mb-2">devgenxai@gmail.com</p>
             <p className="text-sm text-white/70">+92 3434364680</p>
           </div>

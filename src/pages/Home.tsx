@@ -6,14 +6,15 @@ import HeroScene from "@/components/HeroScene";
 import SectionHeader from "@/components/SectionHeader";
 import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { 
-  Code, 
-  Cpu, 
-  PaintBucket, 
-  ChevronRight, 
-  MonitorSmartphone, 
-  Database, 
+import {
+  Code,
+  Cpu,
+  PaintBucket,
+  ChevronRight,
+  MonitorSmartphone,
+  Database,
   BrainCircuit,
   Terminal,
   ShieldCheck,
@@ -31,6 +32,60 @@ import {
   Calendar,
   Calculator
 } from "lucide-react";
+
+const SITE_URL = "https://devgenx.vercel.app";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DevGenX",
+  "alternateName": "DevGenX - AI & Software Development Agency NYC",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/logo.png`,
+  "image": `${SITE_URL}/og-image.png`,
+  "description": "Enterprise AI automation, SaaS platform development, and custom software solutions for New York businesses. React.js, Node.js, Python — building intelligent systems that scale to millions of users.",
+  "telephone": "+923434364680",
+  "email": "devgenxai@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "New York" },
+    { "@type": "City", "name": "Manhattan" },
+    { "@type": "City", "name": "Brooklyn" },
+    { "@type": "City", "name": "Queens" }
+  ],
+  "priceRange": "$$$",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://www.linkedin.com/in/-alijawad/",
+    "https://github.com/Jawa090"
+  ],
+  "serviceType": [
+    "AI Automation",
+    "SaaS Development",
+    "Enterprise Software Development",
+    "Data Engineering",
+    "API Development",
+    "UI/UX Design"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Who owns the code?", "acceptedAnswer": { "@type": "Answer", "text": "You do. We hand off repos, infra configs, and designs on completion." } },
+    { "@type": "Question", "name": "How do we communicate?", "acceptedAnswer": { "@type": "Answer", "text": "Weekly demos + Slack/Email. Shared board for backlog and progress." } },
+    { "@type": "Question", "name": "What about revisions?", "acceptedAnswer": { "@type": "Answer", "text": "Built into sprints; changes outside scope are estimated transparently." } },
+    { "@type": "Question", "name": "Can you work with our stack?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We adapt to your tooling and conventions while keeping quality bars." } },
+    { "@type": "Question", "name": "Do you handle hosting?", "acceptedAnswer": { "@type": "Answer", "text": "We can set up cloud infra or hand off ready-to-deploy artifacts." } },
+    { "@type": "Question", "name": "How fast can we start?", "acceptedAnswer": { "@type": "Answer", "text": "Usually within a week after scope confirmation." } }
+  ]
+};
 
 const Home = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -226,6 +281,13 @@ const Home = () => {
   ];
 
   return (
+    <>
+      <SEO
+        title="AI Automation & SaaS Development NYC | Enterprise Software Solutions | DevGenX"
+        description="New York's trusted AI automation and enterprise software development agency. Custom SaaS platforms, AI integrations, CRM systems & data analytics. React.js, Node.js, Python. 50+ NYC businesses served. Book a free consultation."
+        keywords="AI automation NYC, SaaS development New York, enterprise software development NYC, custom software company Manhattan, web development agency Brooklyn, React.js development NYC, Node.js development New York, AI integration services, custom CRM development NYC, software agency New York City"
+        schema={[localBusinessSchema, faqSchema]}
+      />
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section
@@ -347,12 +409,52 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <div className="mt-16 text-center">
-            <Link to="/about">
-              <Button variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/5">
-                Learn More About Our Team <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+              className="glass-card rounded-xl p-6 border border-neon-blue/20 hover:border-neon-blue/50 transition-colors"
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-neon-blue/10">
+                  <BrainCircuit className="text-neon-blue h-7 w-7" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold text-lg mb-2">AI Automation & Integration</h4>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">
+                    Custom ChatGPT integrations, intelligent document processing, and ML-powered workflows that reduce operational costs by up to 40%.
+                  </p>
+                  <Link to="/services/ai-automation/" className="text-neon-blue text-sm font-medium flex items-center hover:underline">
+                    Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="glass-card rounded-xl p-6 border border-white/10 hover:border-white/30 transition-colors"
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-white/5">
+                  <Code className="text-white h-7 w-7" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Large-Scale SaaS Platforms</h4>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">
+                    Multi-tenant enterprise SaaS applications built to handle millions of users — with subscription management, analytics dashboards, and seamless API integrations.
+                  </p>
+                  <Link to="/services/saas-development/" className="text-neon-blue text-sm font-medium flex items-center hover:underline">
+                    Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -719,6 +821,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

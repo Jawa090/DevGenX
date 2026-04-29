@@ -31,10 +31,36 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				/* Layer 1 — Backgrounds */
+				bg: {
+					base:    '#080808',
+					page:    '#0b0e18',
+					card:    '#141618',
+					surface: '#1c1e22',
+					subtle:  '#282827',
+				},
+				/* Layer 2 — Primary Accent (Electric / Cyan) */
 				neon: {
-					blue: '#00d2ff',   // Electric Blue
-					cyan: '#00e5ff',
-					navy: '#0a192f',
+					blue:   '#00d2ff',   /* Electric Blue — CTA, links, active */
+					sky:    '#45b8f9',   /* Sky Blue — hover state of CTA */
+					deep:   '#0ea5e0',   /* Deep Sky — pressed state */
+					tint:   'rgba(0,0,210,0.10)', /* Accent Tint — tag bg, chip bg */
+					cyan:   '#00e5ff',
+					navy:   '#0a192f',
+				},
+				/* Layer 3 — Secondary Accent (Purple / Linear-style) */
+				purple: {
+					linear:   '#5e6da2',  /* Linear Purple — labels, icons */
+					violet:   '#7c3aed',  /* Violet — gradient start */
+					lavender: '#a878fa',  /* Lavender — badge text, icons */
+					tint:     'rgba(124,58,237,0.10)',
+				},
+				/* Layer 4 — Typography */
+				text: {
+					primary: '#ffffff',   /* Pure White — H1, H2, hero */
+					high:    '#b0b4b7',   /* Off White — H3, subheadings */
+					body:    '#818188',   /* Zinc Gray — body, paragraphs */
+					muted:   '#525258',   /* Muted Zinc — captions, meta */
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

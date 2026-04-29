@@ -15,11 +15,11 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 const routes = [
   { path: "/", label: "Home" },
-  { path: "/services", label: "Services" },
-  { path: "/portfolio", label: "Portfolio" },
-  { path: "/blog", label: "Blog" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
+  { path: "/services/", label: "Services" },
+  { path: "/portfolio/", label: "Portfolio" },
+  { path: "/blog/", label: "Blog" },
+  { path: "/about/", label: "About" },
+  { path: "/contact/", label: "Contact" },
 ];
 
 const Navigation = () => {

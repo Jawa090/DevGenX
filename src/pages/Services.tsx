@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import SectionHeader from "@/components/SectionHeader";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ArrowRight, Calendar } from "lucide-react";
 import { 
   Code, 
   Database, 
@@ -155,15 +159,68 @@ const designServices = [
   },
 ];
 
+const SITE_URL = "https://devgenx.vercel.app";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Software Development Services NYC - DevGenX",
+  "description": "Full-stack software development services in New York City. MERN stack web apps, AI automation, UI/UX design, SaaS platforms, enterprise software, API development, and data engineering.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "DevGenX",
+    "url": SITE_URL,
+    "areaServed": { "@type": "City", "name": "New York" }
+  },
+  "areaServed": ["New York", "Manhattan", "Brooklyn", "Queens"],
+  "url": `${SITE_URL}/services/`
+};
+
+const servicePageLinks = [
+  { title: "AI Automation & Integration", path: "/services/ai-automation/", desc: "ChatGPT integrations, document processing, workflow automation & predictive analytics" },
+  { title: "SaaS Platform Development", path: "/services/saas-development/", desc: "Multi-tenant architectures, subscription billing & cloud-native SaaS platforms" },
+  { title: "Enterprise Software Development", path: "/services/enterprise-software/", desc: "Custom CRM, ERP, inventory management & business applications" },
+  { title: "Data Engineering & Analytics", path: "/services/data-engineering/", desc: "ETL pipelines, data warehousing, BI dashboards & predictive analytics" },
+  { title: "API Development & Microservices", path: "/services/api-development/", desc: "RESTful APIs, GraphQL, microservices architecture & third-party integrations" },
+  { title: "UI/UX Design & Branding", path: "/services/ui-ux-design/", desc: "User research-driven design, brand identity, landing pages & marketing assets" },
+];
+
 const Services = () => {
 
   return (
+    <>
+    <SEO
+      title="Software Development Services NYC | AI, SaaS, Enterprise & Design | DevGenX"
+      description="Full-stack software development services in New York City. MERN stack web apps, AI automation, SaaS platforms, enterprise software, API development & UI/UX design. Trusted by 50+ NYC businesses."
+      keywords="software development services NYC, web development New York, AI development services Manhattan, SaaS development Brooklyn, enterprise software NYC, MERN stack development, custom software development New York City, React development agency NYC"
+      schema={[serviceSchema]}
+    />
     <div className="pt-20 pb-20 px-6">
       <div className="container mx-auto">
-        <SectionHeader 
+        <SectionHeader
           title="What We Actually Build"
           subtitle="Real services for real problems. No corporate buzzwords, just stuff that works."
         />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {servicePageLinks.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+            >
+              <Link to={service.path} className="block glass-card rounded-xl p-6 h-full hover:neon-border transition-all duration-300">
+                <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-white/70 text-sm mb-4">{service.desc}</p>
+                <span className="text-neon-blue text-sm font-medium flex items-center">
+                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="space-y-24">
           {/* MERN Stack Services */}
@@ -423,8 +480,37 @@ const Services = () => {
             </div>
           </div>
         </section>
+        <section className="mt-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-2xl p-8 md:p-12 max-w-3xl mx-auto border border-neon-blue/30"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-white/70 text-lg mb-8">
+              Book a free 30-minute consultation. We will discuss your requirements, recommend the right approach, and provide a transparent quote.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://calendly.com/devgenx" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:opacity-90 px-8 py-6 text-lg">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Free Consultation
+                </Button>
+              </a>
+              <Link to="/contact/">
+                <Button variant="outline" className="border-white/20 text-white px-8 py-6 text-lg hover:bg-white/5">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </section>
       </div>
     </div>
+    </>
   );
 };
 

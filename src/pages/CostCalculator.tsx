@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -99,6 +100,22 @@ const CostCalculator = () => {
   const estimatedWeeks = timeline === "rush" ? "4-6" : timeline === "standard" ? "8-12" : "12-16";
 
   return (
+    <>
+    <SEO
+      title="Software Development Cost Calculator NYC | Get Instant Project Estimate | DevGenX"
+      description="Calculate the cost of your software development project instantly. AI automation, SaaS platforms, enterprise software, CRM/ERP, API development & mobile apps. Free estimates for NYC businesses."
+      keywords="software development cost calculator, project cost estimator NYC, AI automation pricing, SaaS development cost, custom software quote New York, web development pricing, app development cost calculator"
+      schema={[{
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DevGenX Project Cost Calculator",
+        "description": "Free software development cost calculator for NYC businesses. Get instant estimates for AI automation, SaaS platforms, and enterprise software projects.",
+        "url": "https://devgenx.vercel.app/calculator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }]}
+    />
     <div className="py-16 px-6">
       <div className="container mx-auto max-w-4xl">
         <SectionHeader
@@ -317,6 +334,7 @@ const CostCalculator = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

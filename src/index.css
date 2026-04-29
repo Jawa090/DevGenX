@@ -8,33 +8,41 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    /* Layer 1 — Backgrounds */
+    --bg-base:    #080808;   /* True Black — body base */
+    --bg-page:    #0b0e18;   /* Near Black — page bg */
+    --bg-card:    #141618;   /* Elevated — cards, panels */
+    --bg-surface: #1c1e22;   /* Surface — inputs, hover */
+    --bg-subtle:  #282827;   /* Subtle — dividers, borders */
+
+    /* Shadcn tokens mapped to new palette */
+    --background: 0 0% 3%;          /* #080808 */
     --foreground: 0 0% 100%;
 
-    --card: 222 47% 13%;
+    --card: 225 14% 9%;             /* #141618 */
     --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 11%;
+    --popover: 225 14% 9%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 199 100% 55%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 197 100% 50%;        /* #00d2ff Electric Blue */
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 222 47% 20%;
+    --secondary: 225 14% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 47% 20%;
-    --muted-foreground: 222 20% 70%;
+    --muted: 225 14% 12%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 199 100% 55%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 197 100% 50%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 47% 25%;
-    --input: 222 47% 25%;
-    --ring: 199 100% 55%;
+    --border: 0 0% 16%;             /* #282827 */
+    --input:  0 0% 16%;
+    --ring:   197 100% 50%;
 
     --radius: 0.75rem;
   }
@@ -49,7 +57,7 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-    background: radial-gradient(circle at center, hsl(222 47% 15%) 0%, hsl(222 47% 8%) 100%);
+    background: linear-gradient(135deg, #080808 0%, #0b0e18 50%, #141618 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -77,25 +85,53 @@
   }
 
   .neo-blur {
-    @apply backdrop-blur-xl bg-black/40 border border-white/10;
+    @apply backdrop-blur-xl border border-white/10;
+    background: rgba(255, 255, 255, 0.03);
   }
   
   .glass-card {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+    @apply backdrop-blur-xl border shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)];
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Premium accent border variant */
+  .glass-accent {
+    @apply backdrop-blur-xl shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)];
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 210, 255, 0.12);
   }
   
   .neon-glow {
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.7), 0 0 10px rgba(0, 210, 255, 0.5);
     animation: pulsate 2s infinite;
   }
   
   .neon-border {
-    box-shadow: 0 0 5px rgba(0, 210, 255, 0.7), 0 0 10px rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 210, 255, 0.7), 0 0 10px rgba(0, 210, 255, 0.5);
     animation: glow 2s infinite alternate;
   }
   
+  /* text-gradient: Violet → Electric (Hero/CTA style) */
   .text-gradient {
-    @apply bg-gradient-to-br from-neon-blue via-white to-neon-cyan bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #55d8e8, #47c3aed, #00d2ff);
+    background-image: linear-gradient(135deg, #00d2ff 0%, #47c3ae 50%, #00e5ff 100%);
+  }
+
+  /* Purple → Lavender gradient utility */
+  .gradient-purple {
+    background: linear-gradient(90deg, #9060d2, #5e6aed, #a878fa);
+  }
+
+  /* Violet → Purple → Blue full spectrum */
+  .gradient-full {
+    background: linear-gradient(135deg, #55d8e2, #47c3ae, #5e6aed, #00d2ff);
+  }
+
+  /* Dark section fade */
+  .section-fade {
+    background: linear-gradient(180deg, #080808, #141618, #1c1c1e);
   }
   
   .perspective {

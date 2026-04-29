@@ -1,10 +1,19 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
+import SEO from "@/components/SEO";
 import SectionHeader from "@/components/SectionHeader";
 import BlogPost from "@/components/BlogPost";
 import { Button } from "@/components/ui/button";
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "DevGenX Blog - Enterprise Software Insights for NYC Businesses",
+  "description": "Expert insights on AI automation, SaaS development, and enterprise software trends for New York businesses.",
+  "url": "https://devgenx.vercel.app/blog/",
+  "publisher": { "@type": "Organization", "name": "DevGenX", "url": "https://devgenx.vercel.app" }
+};
 
 const Blog = () => {
   const blogPosts = [
@@ -35,6 +44,13 @@ const Blog = () => {
   ];
 
   return (
+    <>
+    <SEO
+      title="Blog | AI Automation & SaaS Development Insights for NYC Businesses | DevGenX"
+      description="Expert insights on AI automation, SaaS development, enterprise software costs, and technology trends for New York businesses. Practical guides with real NYC case studies and ROI analysis."
+      keywords="AI automation blog, SaaS development guide, enterprise software NYC blog, software development costs New York, AI integration insights, technology blog NYC, DevGenX blog, business automation articles"
+      schema={[blogSchema]}
+    />
     <section className="container mx-auto py-16 px-6 md:px-12">
       <div className="flex flex-col items-center mb-12">
         <SectionHeader
@@ -68,6 +84,7 @@ const Blog = () => {
         </Link>
       </div>
     </section>
+    </>
   );
 };
 

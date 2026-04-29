@@ -3,7 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import SectionHeader from "@/components/SectionHeader";
+
+const SITE_URL = "https://devgenx.vercel.app";
 
 const blogPosts = [
   {
@@ -218,12 +221,33 @@ const BlogDetails = () => {
     );
   }
   
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blogPost.title,
+    "description": blogPost.content.replace(/<[^>]*>/g, '').substring(0, 160),
+    "image": blogPost.image,
+    "datePublished": blogPost.date,
+    "author": { "@type": "Organization", "name": "DevGenX", "url": SITE_URL },
+    "publisher": { "@type": "Organization", "name": "DevGenX", "url": SITE_URL, "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.png` } },
+    "url": `${SITE_URL}/blog/${blogPost.id}/`,
+    "mainEntityOfPage": `${SITE_URL}/blog/${blogPost.id}/`
+  };
+
   return (
+    <>
+    <SEO
+      title={`${blogPost.title} | DevGenX Blog`}
+      description={blogPost.content.replace(/<[^>]*>/g, '').substring(0, 160)}
+      keywords={`${blogPost.category}, software development NYC, DevGenX blog, ${blogPost.title.split(' ').slice(0, 4).join(', ')}`}
+      ogType="article"
+      schema={[blogPostSchema]}
+    />
     <section className="container mx-auto pt-20 pb-16 px-6 md:px-12">
-      <Button 
-        variant="outline" 
+      <Button
+        variant="outline"
         className="mb-8"
-        onClick={() => navigate("/blog")}
+        onClick={() => navigate("/blog/")}
       >
         <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
       </Button>
@@ -268,6 +292,7 @@ const BlogDetails = () => {
         />
       </motion.div>
     </section>
+    </>
   );
 };
 
